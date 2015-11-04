@@ -48,9 +48,15 @@ describe("ucFirst method", function(){
 
   it("should return first letter as upperCase letter", function(){
     expect('city'.ucFirst()).toEqual('City');
-    expect('AdA'.ucFirst()).toEqual('AdA');
+    expect('Ada'.ucFirst()).toEqual('Ada');
     expect('jimoke'.ucFirst()).toEqual('Jimoke');
     expect('abdullahi'.ucFirst()).toEqual('Abdullahi');
+  });
+
+  it('should return only first letters capitalized', function(){
+    expect('saBo'.ucFirst()).toEqual('SaBo');
+    expect('IfeanYi'.ucFirst()).toEqual('IfeanYi');
+    expect('NNaya'.ucFirst()).toEqual('NNaya');
   });
 
   it("should return typeOf string", function (){
@@ -116,9 +122,9 @@ describe("wordCount method", function(){
 describe("toCurrency method", function (){
 
   it('should return the right value', function(){
-    expect('3435.353'.toCurrency()).toBe(3,435.353);
-    expect('20909.67'.toCurrency()).toBe(20,909.67);
-    expect('48780.45'.toCurrency()).toBe(48,780.45);
+    expect('3435.353'.toCurrency()).toBe('3,435.353');
+    expect('20909.67'.toCurrency()).toBe('20,909.67');
+    expect('48780.45'.toCurrency()).toBe('48,780.45');
   });
 
   it('should return type of String', function(){
@@ -131,14 +137,14 @@ describe("toCurrency method", function (){
 describe("fromCurrency method", function(){
 
   it('should return the right value format', function(){
-    expect('3,435.353'.toCurrency()).toBe(3435.353);
-    expect('20,909.67'.toCurrency()).toBe(20909.67);
-    expect('48,780.45'.toCurrency()).toBe(48780.45);
+    expect('3,435.353'.fromCurrency()).toBe(3435.353);
+    expect('20,909.67'.fromCurrency()).toBe(20909.67);
+    expect('48,780.45'.fromCurrency()).toBe(48780.45);
   });
 
   it('should return type of Number', function(){
-    expect(typeof '3,435.353'.toCurrency()).toEqual('number');
-    expect(typeof '2,0909.67'.toCurrency()).toEqual('number');
-    expect(typeof '4,8780.45'.toCurrency()).toEqual('number');
+    expect(typeof '3,435.353'.fromCurrency()).toEqual('number');
+    expect(typeof '2,0909.67'.fromCurrency()).toEqual('number');
+    expect(typeof '4,8780.45'.fromCurrency()).toEqual('number');
   });
 });
