@@ -38,7 +38,6 @@ describe("toLower method", function(){
 	});
 
 	it("should return typeOf string", function (){
-		var isString = 
 		expect(typeof 'rowland'.toLower()).toEqual(jasmine.any(String));
 		expect(typeof 'jeREmy'.toLower()).toEqual(jasmine.any(String));
 		expect(typeof 'chRistiaNa'.toLower()).toEqual(jasmine.any(String));
@@ -46,6 +45,7 @@ describe("toLower method", function(){
 });
 
 describe("ucFirst method", function(){
+
 	it("should return first letter as upperCase letter", function(){
 		expect('city'.ucFirst()).toEqual('City');
 		expect('AdA'.ucFirst()).toEqual('AdA');
